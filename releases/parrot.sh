@@ -1,0 +1,11 @@
+DISTRO_NAME="Parrot Security OS"
+DISTRO_COMMENT="Source: EXALAB's Anlinux"
+
+TARBALL_URL['aarch64']="https://github.com/EXALAB/Anlinux-Resources/raw/master/Rootfs/Parrot/arm64/parrot-rootfs-arm64.tar.xz"
+TARBALL_SHA256['aarch64']="af3e4511712313a5c4b24245c6a6f1ffcceedac66d611fee3f805fd6956da92a"
+TARBALL_URL['arm']="https://github.com/EXALAB/Anlinux-Resources/raw/master/Rootfs/Parrot/armhf/parrot-rootfs-armhf.tar.xz"
+TARBALL_SHA256['arm']="fcb3e238dc147b49bca91f39f5ddf8f1646aa47a7c5e31d5cf674bec8694cf80"
+TARBALL_URL['i386']="https://github.com/EXALAB/Anlinux-Resources/raw/master/Rootfs/Parrot/i386/parrot-rootfs-i386.tar.xz"
+TARBALL_SHA256['i386']="1316d0392b0d03e7be396dddc6540a7ac3769dc7faf6345e458f45c5a06adb7e"
+TARBALL_URL['x86_64']="https://github.com/EXALAB/Anlinux-Resources/raw/master/Rootfs/Parrot/amd64/parrot-rootfs-amd64.tar.xz"
+TARBALL_SHA256['x86_64']="855b4837dbd49960a08334b929c00e7484e2b7ae65e9032cdfaa555baa712096"
