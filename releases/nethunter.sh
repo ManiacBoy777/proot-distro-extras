@@ -1,0 +1,11 @@
+DISTRO_NAME="Kali Nethunter"
+DISTRO_COMMENT="Source: Official Nethunter Website"
+
+TARBALL_URL['aarch64']="https://image-nethunter.kali.org/nethunter-fs/kali-2024.3/kali-nethunter-2024.3-rootfs-minimal-arm64.tar.xz"
+TARBALL_SHA256['aarch64']="0560e294fef5fdbadf077bdd609166c94f68f4be72429ba366b4fe4146694dee"
+TARBALL_URL['arm']="https://image-nethunter.kali.org/nethunter-fs/kali-2024.3/kali-nethunter-2024.3-rootfs-minimal-armhf.tar.xz"
+TARBALL_SHA256['arm']="a9d75f84a5509fd1e85d3bacabc114c5f6def9f9673b1399c97091b6a64e8bb1"
+TARBALL_URL['i386']="'https://image-nethunter.kali.org/nethunter-fs/kali-2024.3/kali-nethunter-2024.3-rootfs-minimal-i386.tar.xz"
+TARBALL_SHA256['i386']="8dd665e34f3e5f1205c6e0c2a61bdfcded1915d3b57013a09c0aeed81bfbe027"
+TARBALL_URL['x86_64']="https://image-nethunter.kali.org/nethunter-fs/kali-2024.3/kali-nethunter-2024.3-rootfs-minimal-amd64.tar.xz"
+TARBALL_SHA256['x86_64']="cd2364dc17d177b0f32399f96f72f523ad16f0dd129d5d839a0b3ff132c07636"
