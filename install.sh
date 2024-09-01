@@ -93,6 +93,6 @@ echo -e "${RESET}Type ${GREEN}proot-distro${RESET} list to show a list of all av
 echo ''
 echo -e "Then type ${GREEN}proot-distro install <alias>${RESET} to install it"
 echo ''
-echo -e "Example: ${RED}proot-distro install ${BLUE}kali"
+echo -e "Example: ${RED}proot-distro install ${BLUE}kali${RESET}"
 echo ''
 echo Enjoy!
