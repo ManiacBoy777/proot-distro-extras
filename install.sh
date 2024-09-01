@@ -72,6 +72,25 @@ BG_HI_WHITE='\033[0;107m'
 
 RESET='\033[0m'
 
+# Unfuck the proot-distro script to allow for "hax" since they disabled it
+#!/bin/bash
+
+comment_out() {
+ 
+
+ # Define the target file and the pattern to comment out
+ TARGET_FILE="$PREFIX/bin/proot-distro"
+
+ # Use sed to comment out lines containing the pattern
+ sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
+ sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
+ sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
+ sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
+
+
+}
+
+comment_out
 
 # Install script
 curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/kali.sh" -o $PREFIX/etc/proot-distro/kali.sh
