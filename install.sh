@@ -75,7 +75,7 @@ RESET='\033[0m'
 
 # Install script
 curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/kali.sh" -o $PREFIX/etc/proot-distro/kali.sh
-curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/nethunter.sh" -o $PREFIX/etc/proot-distro/kali.sh
+curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/nethunter.sh" -o $PREFIX/etc/proot-distro/nethunter.sh
 curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/centos.sh" -o $PREFIX/etc/proot-distro/centos.sh
 curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/parrot.sh" -o $PREFIX/etc/proot-distro/parrot.sh
 
