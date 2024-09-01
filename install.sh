@@ -95,4 +95,4 @@ echo -e "Then type ${GREEN}proot-distro install ${CYAN}<alias>${RESET} to instal
 echo ''
 echo -e "Example: ${GREEN}proot-distro install ${CYAN}kali${RESET}"
 echo ''
-echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}
+echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}"
