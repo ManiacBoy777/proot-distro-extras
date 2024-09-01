@@ -101,9 +101,6 @@ echo -e "Then type ${GREEN}proot-distro install ${CYAN}<alias>${RESET} to instal
 echo ''
 echo -e "Example: ${GREEN}proot-distro install ${CYAN}kali${RESET}"
 echo ''
-echo -e "${YELLOW}Note: The termux team highly discourages use of 'Hax' and tries everything in their power"
-echo -e "to stop people from installing these distros on their devices via official 'Termux' methods"
-echo -e "which means this addon could stop working at any time. If it stops working, try installing"
-echo -e "again. This script needs to be installed every time proot-distro updates. Keep that in mind."
+echo -e "${YELLOW}Note: The termux team highly discourages use of 'Hax' and tries everything in their power to stop people from installing these distros on their devices via official 'Termux' methods which means this addon could stop working at any time. If it stops working, try installing again. This script needs to be installed every time proot-distro updates. Keep that in mind."
 echo ''
 echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}"
