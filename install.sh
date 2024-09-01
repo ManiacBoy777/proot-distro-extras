@@ -89,7 +89,7 @@ echo -e "${BLUE}nethunter"
 echo -e "${BLUE}parrot"
 echo -e "${BLUE}centos"
 echo ''
-echo -e "Type ${GREEN}proot-distro${RESET} list to show a list of all available distributions"
+echo -e "${RESET}Type ${GREEN}proot-distro${RESET} list to show a list of all available distributions"
 echo ''
 echo -e "Then type ${GREEN}proot-distro install <alias>${RESET} to install it"
 echo ''
