@@ -84,15 +84,15 @@ echo -e "${GREEN}proot-distro-extras${RESET} is now installed!"
 echo ''
 echo The following aliases are now available:
 echo ''
-echo -e "${BLUE}kali"
-echo -e "${BLUE}nethunter"
-echo -e "${BLUE}parrot"
-echo -e "${BLUE}centos"
+echo -e "${CYAN}kali"
+echo -e "${CYAN}nethunter"
+echo -e "${CYAN}parrot"
+echo -e "${CYAN}centos"
 echo ''
-echo -e "${RESET}Type ${GREEN}proot-distro${RESET} list to show a list of all available distributions"
+echo -e "${RESET}Type ${GREEN}proot-distro list${RESET} to show a list of all available distributions"
 echo ''
-echo -e "Then type ${GREEN}proot-distro install <alias>${RESET} to install it"
+echo -e "Then type ${GREEN}proot-distro install ${CYAN}<alias>${RESET} to install it"
 echo ''
-echo -e "Example: ${RED}proot-distro install ${BLUE}kali${RESET}"
+echo -e "Example: ${GREEN}proot-distro install ${CYAN}kali${RESET}"
 echo ''
-echo Enjoy!
+echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}
