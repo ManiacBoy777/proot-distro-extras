@@ -73,24 +73,11 @@ BG_HI_WHITE='\033[0;107m'
 RESET='\033[0m'
 
 # Unfuck the proot-distro script to allow for "hax" since they disabled it
-#!/bin/bash
-
-comment_out() {
+# File variable for proot-distro script
+TARGET_FILE="$PREFIX/bin/proot-distro"
  
-
- # Define the target file and the pattern to comment out
- TARGET_FILE="$PREFIX/bin/proot-distro"
-
- # Use sed to comment out lines containing the pattern
- sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
- sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
- sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
- sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
-
-
-}
-
-comment_out
+# Use sed to comment out lines that disable "hax" distros
+sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
 
 # Install script
 curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/kali.sh" -o $PREFIX/etc/proot-distro/kali.sh
@@ -114,4 +101,10 @@ echo -e "Then type ${GREEN}proot-distro install ${CYAN}<alias>${RESET} to instal
 echo ''
 echo -e "Example: ${GREEN}proot-distro install ${CYAN}kali${RESET}"
 echo ''
+echo -e "${YELLOW}Note: The termux team highly discourages use of 'Hax' and tries everything in their power"
+echo -e "to stop people from installing these distros on their devices via official 'Termux' methods"
+echo -e "which means this addon could stop working at any time. If it stops working, try installing"
+echo -e "again. This script needs to be installed every time proot-distro updates. Keep that in mind."
+
+
 echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}"
