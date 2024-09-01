@@ -80,19 +80,19 @@ curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/m
 curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/parrot.sh" -o $PREFIX/etc/proot-distro/parrot.sh
 
 echo ''
-echo proot-distro-extras is now installed!
+echo -e "${GREEN}proot-distro-extras${RESET} is now installed!"
 echo ''
 echo The following aliases are now available:
 echo ''
-echo ${BLUE}kali
-echo ${BLUE}nethunter
-echo ${BLUE}parrot
-echo ${BLUE}centos
+echo -e "${BLUE}kali"
+echo -e "${BLUE}nethunter"
+echo -e "${BLUE}parrot"
+echo -e "${BLUE}centos"
 echo ''
-echo Type ${GREEN}proot-distro${RESET} list to show a list of all available distributions
+echo -e "Type ${GREEN}proot-distro${RESET} list to show a list of all available distributions"
 echo ''
-echo Then type ${GREEN}proot-distro install <alias>${RESET} to install it
+echo -e "Then type ${GREEN}proot-distro install <alias>${RESET} to install it"
 echo ''
-echo Example: ${RED}proot-distro install ${BLUE}kali
+echo -e "Example: ${RED}proot-distro install ${BLUE}kali"
 echo ''
-echo enjoy!
+echo Enjoy!
