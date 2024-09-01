@@ -105,6 +105,5 @@ echo -e "${YELLOW}Note: The termux team highly discourages use of 'Hax' and trie
 echo -e "to stop people from installing these distros on their devices via official 'Termux' methods"
 echo -e "which means this addon could stop working at any time. If it stops working, try installing"
 echo -e "again. This script needs to be installed every time proot-distro updates. Keep that in mind."
-
-
+echo ''
 echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}"
