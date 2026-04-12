@@ -1,106 +1,78 @@
 #!/usr/bin/env bash
-# Color codes
-# Regular Colors
-BLACK='\033[0;30m'
-RED='\033[0;31m'
+# ==============================================================================
+# proot-distro-extras: Standalone Installer
+# ==============================================================================
+# Adds extra distributions to proot-distro and enables "hax" distros.
+# Usage:
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/install.sh)"
+# ==============================================================================
+
+set -euo pipefail
+
+# --- Configuration ---
+REPO_OWNER="ManiacBoy777"
+REPO_NAME="proot-distro-extras"
+BRANCH="master"
+BASE_URL="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$BRANCH"
+TARGET_FILE="${PREFIX:-/data/data/com.termux/files/usr}/bin/proot-distro"
+DISTRO_DIR="${PREFIX:-/data/data/com.termux/files/usr}/etc/proot-distro"
+
+# --- Colors ---
 GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
-WHITE='\033[0;37m'
-
-# Bold Colors
-BOLD_BLACK='\033[1;30m'
-BOLD_RED='\033[1;31m'
-BOLD_GREEN='\033[1;32m'
-BOLD_YELLOW='\033[1;33m'
-BOLD_BLUE='\033[1;34m'
-BOLD_PURPLE='\033[1;35m'
-BOLD_CYAN='\033[1;36m'
-BOLD_WHITE='\033[1;37m'
-
-# Underline Colors
-UNDERLINE_BLACK='\033[4;30m'
-UNDERLINE_RED='\033[4;31m'
-UNDERLINE_GREEN='\033[4;32m'
-UNDERLINE_YELLOW='\033[4;33m'
-UNDERLINE_BLUE='\033[4;34m'
-UNDERLINE_PURPLE='\033[4;35m'
-UNDERLINE_CYAN='\033[4;36m'
-UNDERLINE_WHITE='\033[4;37m'
-
-# Background Colors
-BG_BLACK='\033[40m'
-BG_RED='\033[41m'
-BG_GREEN='\033[42m'
-BG_YELLOW='\033[43m'
-BG_BLUE='\033[44m'
-BG_PURPLE='\033[45m'
-BG_CYAN='\033[46m'
-BG_WHITE='\033[47m'
-
-# High Intensity Colors
-HI_BLACK='\033[0;90m'
-HI_RED='\033[0;91m'
-HI_GREEN='\033[0;92m'
-HI_YELLOW='\033[0;93m'
-HI_BLUE='\033[0;94m'
-HI_PURPLE='\033[0;95m'
-HI_CYAN='\033[0;96m'
-HI_WHITE='\033[0;97m'
-
-# Bold High Intensity Colors
-BOLD_HI_BLACK='\033[1;90m'
-BOLD_HI_RED='\033[1;91m'
-BOLD_HI_GREEN='\033[1;92m'
-BOLD_HI_YELLOW='\033[1;93m'
-BOLD_HI_BLUE='\033[1;94m'
-BOLD_HI_PURPLE='\033[1;95m'
-BOLD_HI_CYAN='\033[1;96m'
-BOLD_HI_WHITE='\033[1;97m'
-
-# High Intensity Background Colors
-BG_HI_BLACK='\033[0;100m'
-BG_HI_RED='\033[0;101m'
-BG_HI_GREEN='\033[0;102m'
-BG_HI_YELLOW='\033[0;103m'
-BG_HI_BLUE='\033[0;104m'
-BG_HI_PURPLE='\033[0;105m'
-BG_HI_CYAN='\033[0;106m'
-BG_HI_WHITE='\033[0;107m'
-
+YELLOW='\033[0;33m'
+RED='\033[0;31m'
 RESET='\033[0m'
 
-# Unfuck the proot-distro script to allow for "hax" since they disabled it
-# File variable for proot-distro script
-TARGET_FILE="$PREFIX/bin/proot-distro"
- 
-# Use sed to comment out lines that disable "hax" distros
-sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
+# --- Utility Functions ---
+log_info() { echo -e "${CYAN}[INFO]${RESET} $1"; }
+log_success() { echo -e "${GREEN}[SUCCESS]${RESET} $1"; }
+log_warn() { echo -e "${YELLOW}[WARN]${RESET} $1"; }
+log_error() { echo -e "${RED}[ERROR]${RESET} $1"; exit 1; }
 
-# Install script
-curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/kali.sh" -o $PREFIX/etc/proot-distro/kali.sh
-curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/nethunter.sh" -o $PREFIX/etc/proot-distro/nethunter.sh
-curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/centos.sh" -o $PREFIX/etc/proot-distro/centos.sh
-curl -fsSL "https://raw.githubusercontent.com/ManiacBoy777/proot-distro-extras/master/releases/parrot.sh" -o $PREFIX/etc/proot-distro/parrot.sh
+# --- Installation Steps ---
 
-echo ''
-echo -e "${GREEN}proot-distro-extras${RESET} is now installed!"
-echo ''
-echo The following aliases are now available:
-echo ''
-echo -e "${CYAN}kali"
-echo -e "${CYAN}nethunter"
-echo -e "${CYAN}parrot"
-echo -e "${CYAN}centos"
-echo ''
-echo -e "${RESET}Type ${GREEN}proot-distro list${RESET} to show a list of all available distributions"
-echo ''
-echo -e "Then type ${GREEN}proot-distro install ${CYAN}<alias>${RESET} to install it"
-echo ''
-echo -e "Example: ${GREEN}proot-distro install ${CYAN}kali${RESET}"
-echo ''
-echo -e "${YELLOW}Note: The termux team highly discourages use of 'Hax' and tries everything in their power to stop people from installing these distros on their devices via official 'Termux' methods which means this addon could stop working at any time. If it stops working, try installing again. This script needs to be installed every time proot-distro updates. Keep that in mind."
-echo ''
-echo -e "${RED}E${ORANGE}n${YELLOW}j${GREEN}o${CYAN}y${PURPLE}!${RESET}"
+check_proot_distro() {
+    if [[ ! -f "$TARGET_FILE" ]]; then
+        log_info "proot-distro not found. Installing..."
+        pkg install proot-distro -y || log_error "Failed to install proot-distro."
+    fi
+}
+
+patch_proot_distro() {
+    log_info "Patching proot-distro to enable extra distributions..."
+    # Comment out the restriction block for "hax" distros
+    if grep -q "kali|parrot|nethunter|blackarch" "$TARGET_FILE"; then
+        sed -i '/if grep -qiP '\''(kali|parrot|nethunter|blackarch)'\'' <<< "$distro_name"/,/fi/ s/^/#/' "$TARGET_FILE"
+        log_success "proot-distro patched successfully."
+    else
+        log_warn "Restriction block not found or already patched."
+    fi
+}
+
+install_distro_configs() {
+    log_info "Downloading extra distribution configurations..."
+    mkdir -p "$DISTRO_DIR"
+    
+    local distros=("kali" "nethunter" "centos" "parrot")
+    for distro in "${distros[@]}"; do
+        log_info "Downloading $distro config..."
+        curl -fsSL "$BASE_URL/releases/$distro.sh" -o "$DISTRO_DIR/$distro.sh" || log_warn "Failed to download $distro config."
+    done
+}
+
+# --- Main Execution ---
+
+log_info "Starting proot-distro-extras installation..."
+
+check_proot_distro
+patch_proot_distro
+install_distro_configs
+
+echo -e "\n${GREEN}proot-distro-extras${RESET} is now installed!\n"
+echo -e "The following extra distros are now available:"
+echo -e "${CYAN}  - kali\n  - nethunter\n  - parrot\n  - centos${RESET}\n"
+echo -e "Type ${GREEN}proot-distro list${RESET} to see all available distributions."
+echo -e "Install one with: ${GREEN}proot-distro install ${CYAN}<alias>${RESET}\n"
+log_warn "Note: This patch may need to be reapplied after proot-distro updates."
+echo -e "${RED}E${YELLOW}n${GREEN}j${CYAN}o${PURPLE}y${RED}!${RESET}"
